@@ -200,7 +200,6 @@ jframework(Nombre,Sug):-
 %------------------------------------------------------------------
 
 %tipo(framework,tipo,enfoque)
-:-dynamic tipo/3.
 tipo('React','web','Frontend').
 tipo('Angular','web','Frontend').
 tipo('Vue','web','Frontend').
@@ -256,7 +255,6 @@ tipo('Chart.js','charts','Frontend').
 tipo('D3.js','charts','Frontend').
 
 % personal(framework, experiencia, tamano_equipo)
-:-dynamic personal/3.
 personal('React', 'Poca', 'Pequeno').
 personal('React', 'Moderada', 'Mediano').
 personal('React', 'Amplia', 'Grande').
@@ -440,7 +438,6 @@ personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
-:-dynamic contexto/3.
 contexto('React', 'Corto', 'Bajo').
 contexto('React', 'Corto', 'Medio').
 contexto('React', 'Mediano', 'Medio').
@@ -542,7 +539,6 @@ contexto('Keras', 'Corto', 'Bajo').
 
 
 %lenguaje(framework,lenguaje)
-:-dynamic lenguaje/2.
 lenguaje('React','JavaScript').
 lenguaje('React','TypeScript').
 lenguaje('Angular','JavaScript').
@@ -653,7 +649,6 @@ lenguaje('D3.js','JavaScript').
 lenguaje('D3.js','TypeScript').
 
 %justificacion(framework,justificacion)
-:-dynamic justificacion/2.
 justificacion('React','React es una biblioteca de JavaScript rápida y flexible que permite construir interfaces de usuario reutilizables con un alto rendimiento gracias a su Virtual DOM.').
 justificacion('Angular','Angular es un framework completo que permite desarrollar aplicaciones web robustas con TypeScript, ideal para proyectos empresariales con arquitecturas complejas.').
 justificacion('Vue','Vue es un framework progresivo que combina facilidad de aprendizaje con un enfoque modular, ideal para proyectos pequeños y medianos.').
