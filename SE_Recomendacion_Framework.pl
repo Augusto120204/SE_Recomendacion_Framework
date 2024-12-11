@@ -189,8 +189,8 @@ verificar_lenguaje(_, _) :-
 
 
 jframework(Nombre,Sug):- 
-                   justificacion(Nombre,Sugerencia),
-                   send(Sug,selection,Sugerencia).
+    justificacion(Nombre,Sugerencia),
+    send(Sug,selection,Sugerencia).
 
 
 %------------------------------------------------------------------
@@ -200,7 +200,6 @@ jframework(Nombre,Sug):-
 %------------------------------------------------------------------
 
 %tipo(framework,tipo,enfoque)
-tipo('React','web','Frontend').
 tipo('Angular','web','Frontend').
 tipo('Vue','web','Frontend').
 tipo('Django','web','Backend').
@@ -223,6 +222,7 @@ tipo('Meteor','web','Fullstack').
 tipo('Svelte','web','Frontend').
 tipo('Blazor','web','Frontend').
 tipo('Backbone.js','web','Frontend').
+tipo('React','web','Frontend').
 tipo('Ember.js','web','Frontend').
 tipo('Phoenix','web','Backend').
 tipo('FastAPI','web','Backend').
@@ -255,8 +255,6 @@ tipo('Chart.js','charts','Frontend').
 tipo('D3.js','charts','Frontend').
 
 % personal(framework, experiencia, tamano_equipo)
-personal('React', 'Poca', 'Pequeno').
-personal('React', 'Moderada', 'Mediano').
 personal('React', 'Amplia', 'Grande').
 personal('Angular', 'Poca', 'Pequeno').
 personal('Angular', 'Moderada', 'Mediano').
@@ -291,6 +289,8 @@ personal('React Native', 'Amplia', 'Grande').
 personal('SwiftUI', 'Poca', 'Pequeno').
 personal('SwiftUI', 'Moderada', 'Mediano').
 personal('SwiftUI', 'Amplia', 'Grande').
+personal('React', 'Poca', 'Pequeno').
+personal('React', 'Moderada', 'Mediano').
 personal('Kotlin Multiplatform', 'Poca', 'Pequeno').
 personal('Kotlin Multiplatform', 'Moderada', 'Mediano').
 personal('Kotlin Multiplatform', 'Amplia', 'Grande').
@@ -438,8 +438,6 @@ personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
-contexto('React', 'Corto', 'Bajo').
-contexto('React', 'Corto', 'Medio').
 contexto('React', 'Mediano', 'Medio').
 contexto('Angular', 'Mediano', 'Medio').
 contexto('Angular', 'Mediano', 'Alto').
@@ -477,6 +475,8 @@ contexto('Spark', 'Largo', 'Alto').
 contexto('Hadoop', 'Largo', 'Alto').
 contexto('Keras', 'Mediano', 'Medio').
 contexto('OpenCV', 'Mediano', 'Alto').
+contexto('React', 'Corto', 'Bajo').
+contexto('React', 'Corto', 'Medio').
 contexto('Three.js', 'Corto', 'Bajo').
 contexto('Three.js', 'Corto', 'Medio').
 contexto('Babylon.js', 'Corto', 'Bajo').
@@ -539,8 +539,6 @@ contexto('Keras', 'Corto', 'Bajo').
 
 
 %lenguaje(framework,lenguaje)
-lenguaje('React','JavaScript').
-lenguaje('React','TypeScript').
 lenguaje('Angular','JavaScript').
 lenguaje('Angular','TypeScript').
 lenguaje('Vue','JavaScript').
@@ -583,6 +581,8 @@ lenguaje('Gatsby','JavaScript').
 lenguaje('Gatsby','TypeScript').
 lenguaje('Gridsome','JavaScript').
 lenguaje('Gridsome','TypeScript').
+lenguaje('React','JavaScript').
+lenguaje('React','TypeScript').
 lenguaje('Capacitor','JavaScript').
 lenguaje('Capacitor','TypeScript').
 lenguaje('Ionic','JavaScript').
