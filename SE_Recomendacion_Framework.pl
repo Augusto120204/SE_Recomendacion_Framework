@@ -377,7 +377,6 @@ personal('TensorFlow', 'Amplia', 'Grande').
 personal('PyTorch', 'Poca', 'Pequeno').
 personal('PyTorch', 'Moderada', 'Mediano').
 personal('PyTorch', 'Amplia', 'Grande').
-<<<<<<< HEAD
 personal('PyTorch', 'Moderada', 'Grande').
 personal('Backbone.js', 'Poca', 'Pequeno').
 personal('Backbone.js', 'Moderada', 'Mediano').
@@ -403,8 +402,6 @@ personal('Spark', 'Moderada', 'Mediano').
 personal('Spark', 'Poca', 'Pequeno').
 personal('Keras', 'Moderada', 'Mediano').
 personal('Keras', 'Poca', 'Pequeno').
-
-=======
 personal('Hadoop', 'Poca', 'Pequeno').
 personal('Hadoop', 'Moderada', 'Mediano').
 personal('Hadoop', 'Amplia', 'Grande').
@@ -441,7 +438,6 @@ personal('Plotly', 'Amplia', 'Grande').
 personal('Chart.js', 'Poca', 'Pequeno').
 personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
->>>>>>> 9b9d9535b543b95e060f45c4b69e3c763c9d989f
 
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
