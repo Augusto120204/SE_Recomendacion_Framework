@@ -32,7 +32,7 @@ usuario :-
 
    % Menú Tipo de Aplicación
    new(Tipo, menu('Tipo de Aplicación')),
-   send_list(Tipo, append, ['web', 'mobile', 'desktop', '3D', 'charts', 'maps']),
+   send_list(Tipo, append, ['web', 'mobile', 'desktop', '3D', 'charts', 'maps', 'game']),
 
    % Menú Enfoque
    new(Enfoque, menu('Enfoque')),
