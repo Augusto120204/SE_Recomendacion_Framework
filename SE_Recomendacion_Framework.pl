@@ -115,11 +115,11 @@ framework(Tipo, Enfoque, Experiencia, Tam_Equipo, Presupuesto, Plazo, Lenguaje, 
       fail
     ),
     % % Verificar contexto
-    % ( verificar_contexto(N, Plazo, Presupuesto) ->
-    %     true
-    % ; mostrar_error('Error: No se encontro coincidencia en el plazo o presupuesto.'),
-    %     fail
-    %     ),
+    ( verificar_contexto(N, Plazo, Presupuesto) ->
+        true
+    ; mostrar_error('Error: No se encontro coincidencia en el plazo o presupuesto.'),
+        fail
+        ),
     % Verificar personal
     ( verificar_personal(N, Experiencia, Tam_Equipo) ->
         true
@@ -143,7 +143,7 @@ mostrar_resultado(Nombre, N) :-
     new(VentanaU, dialog('Sugerencia de Framework')),
     format(atom(Mensaje), 'Framework sugerido: ~w', [N]),
     new(Lie2, label(texto, Mensaje, font('times', 'roman', 17))),
-    send(Nombre, selection, N),  % Actualiza la seleccion en la interfaz
+    send(Nombre, selection, N),  
     send(VentanaU, append, Lie2),
     send(VentanaU, open).
 
@@ -159,28 +159,28 @@ mostrar_error(Mensaje) :-
 
 % Verificar tipo y enfoque
 verificar_tipo(N, Tipo, Enfoque) :-
-    tipo(N, Tipo, Enfoque), !.  % Si se cumple, continua
+    tipo(N, Tipo, Enfoque), !.  
 verificar_tipo(_, _, _) :-
     write('Error: No se encontro un tipo o enfoque valido.'), nl,
     fail.
 
 % Verificar personal
 verificar_personal(N, Experiencia, Tam_Equipo) :-
-    personal(N, Experiencia, Tam_Equipo), !.  % Si se cumple, continua
+    personal(N, Experiencia, Tam_Equipo), !.  
 verificar_personal(_, _, _) :-
     write('Error: No se encontro coincidencia en la experiencia o tamano de equipo.'), nl,
     fail.
 
 % Verificar contexto
 verificar_contexto(N, Plazo, Presupuesto) :-
-    contexto(N, Plazo, Presupuesto), !.  % Si se cumple, continua
+    contexto(N, Plazo, Presupuesto), !.  
 verificar_contexto(_, _, _) :-
     write('Error: No se encontro coincidencia en el plazo o presupuesto.'), nl,
     fail.
 
 % Verificar lenguaje
 verificar_lenguaje(N, Lenguaje) :-
-    lenguaje(N, Lenguaje), !.  % Si se cumple, continua
+    lenguaje(N, Lenguaje), !.  
 verificar_lenguaje(_, _) :-
     write('Error: No se encontro coincidencia en el lenguaje.'), nl,
     fail.
