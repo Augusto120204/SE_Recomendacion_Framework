@@ -18,8 +18,8 @@ resource(login,image,image('inicio.bmp')).
    send(Figure, display, Bitmap),
    send(Figure, status, 1),
    send(VentanaE, display, Figure, point(25, 40)),
-   send(VentanaE, display, Usuario, point(30, 430)),
-   send(VentanaE, display, Salir, point(400, 430)),
+   send(VentanaE, display, Usuario, point(400, 430)),
+   send(VentanaE, display, Salir, point(800, 430)),
    send(VentanaE, open).
 
 
@@ -377,7 +377,6 @@ personal('TensorFlow', 'Amplia', 'Grande').
 personal('PyTorch', 'Poca', 'Pequeno').
 personal('PyTorch', 'Moderada', 'Mediano').
 personal('PyTorch', 'Amplia', 'Grande').
-
 personal('PyTorch', 'Moderada', 'Grande').
 personal('Backbone.js', 'Poca', 'Pequeno').
 personal('Backbone.js', 'Moderada', 'Mediano').
@@ -403,8 +402,6 @@ personal('Spark', 'Moderada', 'Mediano').
 personal('Spark', 'Poca', 'Pequeno').
 personal('Keras', 'Moderada', 'Mediano').
 personal('Keras', 'Poca', 'Pequeno').
-
-=======
 personal('Hadoop', 'Poca', 'Pequeno').
 personal('Hadoop', 'Moderada', 'Mediano').
 personal('Hadoop', 'Amplia', 'Grande').
@@ -441,8 +438,6 @@ personal('Plotly', 'Amplia', 'Grande').
 personal('Chart.js', 'Poca', 'Pequeno').
 personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
-
-
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
 :-dynamic contexto/3.
