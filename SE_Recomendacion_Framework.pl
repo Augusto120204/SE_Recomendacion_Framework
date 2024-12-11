@@ -313,6 +313,31 @@ personal('TensorFlow', 'Amplia', 'Grande').
 personal('TensorFlow', 'Moderada', 'Grande').
 personal('PyTorch', 'Amplia', 'Grande').
 personal('PyTorch', 'Moderada', 'Grande').
+personal('Backbone.js', 'Poca', 'Pequeño').
+personal('Backbone.js', 'Moderada', 'Mediano').
+personal('Ember.js', 'Moderada', 'Mediano').
+personal('Ember.js', 'Amplia', 'Grande').
+personal('Capacitor', 'Poca', 'Pequeño').
+personal('Capacitor', 'Moderada', 'Mediano').
+personal('Ionic', 'Moderada', 'Mediano').
+personal('Ionic', 'Poca', 'Pequeño').
+personal('Xamarin', 'Amplia', 'Grande').
+personal('Xamarin', 'Moderada', 'Mediano').
+personal('PyQt', 'Moderada', 'Mediano').
+personal('PyQt', 'Poca', 'Pequeño').
+personal('GTK', 'Poca', 'Pequeño').
+personal('GTK', 'Moderada', 'Mediano').
+personal('Pandas', 'Amplia', 'Grande').
+personal('Pandas', 'Moderada', 'Mediano').
+personal('NumPy', 'Amplia', 'Grande').
+personal('NumPy', 'Moderada', 'Mediano').
+personal('Hadoop', 'Amplia', 'Grande').
+personal('Hadoop', 'Moderada', 'Mediano').
+personal('Spark', 'Moderada', 'Mediano').
+personal('Spark', 'Poca', 'Pequeño').
+personal('Keras', 'Moderada', 'Mediano').
+personal('Keras', 'Poca', 'Pequeño').
+
 
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
@@ -387,6 +412,34 @@ contexto('TensorFlow', 'Largo', 'Alto').
 contexto('TensorFlow', 'Mediano', 'Alto').
 contexto('PyTorch', 'Largo', 'Alto').
 contexto('PyTorch', 'Mediano', 'Alto').
+contexto('Backbone.js', 'Corto', 'Bajo').
+contexto('Backbone.js', 'Mediano', 'Medio').
+contexto('Ember.js', 'Mediano', 'Medio').
+contexto('Ember.js', 'Largo', 'Alto').
+contexto('Capacitor', 'Corto', 'Bajo').
+contexto('Capacitor', 'Mediano', 'Medio').
+contexto('Ionic', 'Mediano', 'Medio').
+contexto('Ionic', 'Corto', 'Bajo').
+contexto('Xamarin', 'Mediano', 'Alto').
+contexto('Xamarin', 'Largo', 'Alto').
+contexto('PyQt', 'Mediano', 'Medio').
+contexto('PyQt', 'Corto', 'Bajo').
+contexto('GTK', 'Corto', 'Bajo').
+contexto('GTK', 'Mediano', 'Medio').
+contexto('Unity', 'Mediano', 'Medio').
+contexto('Unity', 'Largo', 'Alto').
+contexto('Unreal Engine', 'Largo', 'Alto').
+contexto('Unreal Engine', 'Mediano', 'Alto').
+contexto('Pandas', 'Largo', 'Alto').
+contexto('Pandas', 'Mediano', 'Medio').
+contexto('NumPy', 'Largo', 'Alto').
+contexto('NumPy', 'Mediano', 'Medio').
+contexto('Hadoop', 'Largo', 'Alto').
+contexto('Hadoop', 'Mediano', 'Medio').
+contexto('Spark', 'Largo', 'Medio').
+contexto('Spark', 'Mediano', 'Medio').
+contexto('Keras', 'Mediano', 'Medio').
+contexto('Keras', 'Corto', 'Bajo').
 
 
 %lenguaje(framework,lenguaje)
@@ -447,6 +500,30 @@ lenguaje('Unreal Engine','C++').
 lenguaje('Godot','GDScript').
 lenguaje('Godot','C#').
 lenguaje('Pandas','Python').
+lenguaje('Backbone.js', 'JavaScript').
+lenguaje('Backbone.js', 'TypeScript').
+lenguaje('Ember.js', 'JavaScript').
+lenguaje('Ember.js', 'TypeScript').
+lenguaje('Capacitor', 'JavaScript').
+lenguaje('Capacitor', 'TypeScript').
+lenguaje('Ionic', 'JavaScript').
+lenguaje('Ionic', 'TypeScript').
+lenguaje('Xamarin', 'C#').
+lenguaje('Xamarin', 'F#').
+lenguaje('PyQt', 'Python').
+lenguaje('PyQt', 'C++').
+lenguaje('GTK', 'C').
+lenguaje('GTK', 'Python').
+lenguaje('Pandas', 'Python').
+lenguaje('Pandas', 'R').
+lenguaje('NumPy', 'Python').
+lenguaje('NumPy', 'C++').
+lenguaje('Hadoop', 'Java').
+lenguaje('Hadoop', 'Scala').
+lenguaje('Spark', 'Scala').
+lenguaje('Spark', 'Java').
+lenguaje('Keras', 'Python').
+lenguaje('Keras', 'R').
 lenguaje('NumPy','Python').
 lenguaje('TensorFlow','Python').
 lenguaje('TensorFlow','C++').
