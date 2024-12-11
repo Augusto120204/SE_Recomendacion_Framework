@@ -108,35 +108,57 @@ usuario :-
 %------------------------------------------------------------------
 
 framework(Tipo, Enfoque, Experiencia, Tam_Equipo, Presupuesto, Plazo, Lenguaje, Nombre) :-
-    % Verificar tipo y enfoque
-    ( verificar_tipo(N, Tipo, Enfoque) ->
+    % Primera evaluación: Generar una lista inicial de posibles frameworks
+    findall(N, tipo(N, Tipo, Enfoque), ListaInicial),
+    ( ListaInicial \= [] ->
         true
-    ; mostrar_error('Error: No se encontro un tipo o enfoque valido.'),
+    ; mostrar_error('Error: No se encontró un tipo o enfoque válido.'),
       fail
     ),
-    % % Verificar contexto
-    ( verificar_contexto(N, Plazo, Presupuesto) ->
-        true
-    ; mostrar_error('Error: No se encontro coincidencia en el plazo o presupuesto.'),
-        fail
-        ),
-    % Verificar personal
-    ( verificar_personal(N, Experiencia, Tam_Equipo) ->
-        true
-    ; mostrar_error('Error: No se encontro coincidencia en la experiencia o tamano de equipo.'),
-      fail
-    ),
-    
-    % Verificar lenguaje
-    ( verificar_lenguaje(N, Lenguaje) ->
-        true
-    ; mostrar_error('Error: No se encontro coincidencia en el lenguaje.'),
-      fail
-    ),
-    % Si todo es valido, mostrar el resultado en una ventana
-    mostrar_resultado(Nombre, N),
-    !.
 
+    % Segunda evaluación: Filtrar por contexto (plazo y presupuesto)
+    include(filtrar_contexto(Plazo, Presupuesto), ListaInicial, ListaContexto),
+    ( ListaContexto \= [] ->
+        true
+    ; mostrar_error('Error: No se encontró coincidencia en el plazo o presupuesto.'),
+      fail
+    ),
+
+    % Tercera evaluación: Filtrar por experiencia y tamaño de equipo
+    include(filtrar_personal(Experiencia, Tam_Equipo), ListaContexto, ListaPersonal),
+    ( ListaPersonal \= [] ->
+        true
+    ; mostrar_error('Error: No se encontró coincidencia en la experiencia o tamaño del equipo.'),
+      fail
+    ),
+
+    % Cuarta evaluación: Filtrar por lenguaje
+    include(filtrar_lenguaje(Lenguaje), ListaPersonal, ListaLenguaje),
+    ( ListaLenguaje \= [] ->
+        true
+    ; mostrar_error('Error: No se encontró coincidencia en el lenguaje.'),
+      fail
+    ),
+
+    % Si queda un único resultado, mostrarlo, o seleccionar uno al azar si hay múltiples
+    ( ListaLenguaje = [Resultado] ->
+        mostrar_resultado(Nombre, Resultado)
+    ; ListaLenguaje \= [] ->
+        random_member(ResultadoAleatorio, ListaLenguaje),
+        mostrar_resultado(Nombre, ResultadoAleatorio)
+    ; mostrar_error('Error: Hay múltiples resultados o ninguno después de filtrar.'),
+      fail
+    ).
+
+% Predicados de filtrado
+filtrar_contexto(Plazo, Presupuesto, N) :-
+    contexto(N, Plazo, Presupuesto).
+
+filtrar_personal(Experiencia, Tam_Equipo, N) :-
+    personal(N, Experiencia, Tam_Equipo).
+
+filtrar_lenguaje(Lenguaje, N) :-
+    lenguaje(N, Lenguaje).
 
 % Mostrar resultado exitoso
 mostrar_resultado(Nombre, N) :-
@@ -156,38 +178,6 @@ mostrar_error(Mensaje) :-
 
 
 
-
-% Verificar tipo y enfoque
-verificar_tipo(N, Tipo, Enfoque) :-
-    tipo(N, Tipo, Enfoque), !.  
-verificar_tipo(_, _, _) :-
-    write('Error: No se encontro un tipo o enfoque valido.'), nl,
-    fail.
-
-% Verificar personal
-verificar_personal(N, Experiencia, Tam_Equipo) :-
-    personal(N, Experiencia, Tam_Equipo), !.  
-verificar_personal(_, _, _) :-
-    write('Error: No se encontro coincidencia en la experiencia o tamano de equipo.'), nl,
-    fail.
-
-% Verificar contexto
-verificar_contexto(N, Plazo, Presupuesto) :-
-    contexto(N, Plazo, Presupuesto), !.  
-verificar_contexto(_, _, _) :-
-    write('Error: No se encontro coincidencia en el plazo o presupuesto.'), nl,
-    fail.
-
-% Verificar lenguaje
-verificar_lenguaje(N, Lenguaje) :-
-    lenguaje(N, Lenguaje), !.  
-verificar_lenguaje(_, _) :-
-    write('Error: No se encontro coincidencia en el lenguaje.'), nl,
-    fail.
-
-
-
-
 jframework(Nombre,Sug):- 
     justificacion(Nombre,Sugerencia),
     send(Sug,selection,Sugerencia).
@@ -200,6 +190,7 @@ jframework(Nombre,Sug):-
 %------------------------------------------------------------------
 
 %tipo(framework,tipo,enfoque)
+tipo('React','web','Frontend').
 tipo('Angular','web','Frontend').
 tipo('Vue','web','Frontend').
 tipo('Django','web','Backend').
@@ -222,7 +213,6 @@ tipo('Meteor','web','Fullstack').
 tipo('Svelte','web','Frontend').
 tipo('Blazor','web','Frontend').
 tipo('Backbone.js','web','Frontend').
-tipo('React','web','Frontend').
 tipo('Ember.js','web','Frontend').
 tipo('Phoenix','web','Backend').
 tipo('FastAPI','web','Backend').
@@ -255,6 +245,8 @@ tipo('Chart.js','charts','Frontend').
 tipo('D3.js','charts','Frontend').
 
 % personal(framework, experiencia, tamano_equipo)
+personal('React', 'Poca', 'Pequeno').
+personal('React', 'Moderada', 'Mediano').
 personal('React', 'Amplia', 'Grande').
 personal('Angular', 'Poca', 'Pequeno').
 personal('Angular', 'Moderada', 'Mediano').
@@ -289,8 +281,6 @@ personal('React Native', 'Amplia', 'Grande').
 personal('SwiftUI', 'Poca', 'Pequeno').
 personal('SwiftUI', 'Moderada', 'Mediano').
 personal('SwiftUI', 'Amplia', 'Grande').
-personal('React', 'Poca', 'Pequeno').
-personal('React', 'Moderada', 'Mediano').
 personal('Kotlin Multiplatform', 'Poca', 'Pequeno').
 personal('Kotlin Multiplatform', 'Moderada', 'Mediano').
 personal('Kotlin Multiplatform', 'Amplia', 'Grande').
@@ -438,6 +428,7 @@ personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
+contexto('React', 'Corto', 'Medio').
 contexto('React', 'Mediano', 'Medio').
 contexto('Angular', 'Mediano', 'Medio').
 contexto('Angular', 'Mediano', 'Alto').
@@ -475,8 +466,6 @@ contexto('Spark', 'Largo', 'Alto').
 contexto('Hadoop', 'Largo', 'Alto').
 contexto('Keras', 'Mediano', 'Medio').
 contexto('OpenCV', 'Mediano', 'Alto').
-contexto('React', 'Corto', 'Bajo').
-contexto('React', 'Corto', 'Medio').
 contexto('Three.js', 'Corto', 'Bajo').
 contexto('Three.js', 'Corto', 'Medio').
 contexto('Babylon.js', 'Corto', 'Bajo').
