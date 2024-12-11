@@ -5,7 +5,7 @@ resource(login,image,image('inicio.bmp')).
 
 
 % Interfaz principal
-:- new(VentanaE, dialog('Framework Advisor 1997')),
+:- new(VentanaE, dialog('Framework Sugerido')),
    new(Etiqueta, label(nombre, 'SISTEMA EXPERTO - SUGERENCIA DE FRAMEWORK')),
    new(Salir, button('SALIR', message(VentanaE, destroy))),
    new(Usuario, button('Solicitar Sugerencia', message(@prolog, usuario))),
@@ -257,62 +257,162 @@ tipo('D3.js','charts','Frontend').
 
 % personal(framework, experiencia, tamaño_equipo)
 :-dynamic personal/3.
-
-% Frameworks existentes con combinaciones ampliadas
 personal('React', 'Poca', 'Pequeño').
 personal('React', 'Moderada', 'Mediano').
-personal('React', 'Moderada', 'Pequeño').
+personal('React', 'Amplia', 'Grande').
+personal('Angular', 'Poca', 'Pequeño').
 personal('Angular', 'Moderada', 'Mediano').
 personal('Angular', 'Amplia', 'Grande').
 personal('Vue', 'Poca', 'Pequeño').
-personal('Vue', 'Moderada', 'Pequeño').
-personal('Django', 'Amplia', 'Grande').
+personal('Vue', 'Moderada', 'Mediano').
+personal('Vue', 'Amplia', 'Grande').
+personal('Django', 'Poca', 'Pequeño').
 personal('Django', 'Moderada', 'Mediano').
-personal('Flask', 'Moderada', 'Pequeño').
+personal('Django', 'Amplia', 'Grande').
 personal('Flask', 'Poca', 'Pequeño').
-personal('Spring', 'Amplia', 'Grande').
+personal('Flask', 'Moderada', 'Mediano').
+personal('Flask', 'Amplia', 'Grande').
+personal('Spring', 'Poca', 'Pequeño').
 personal('Spring', 'Moderada', 'Mediano').
-personal('Express', 'Moderada', 'Mediano').
+personal('Spring', 'Amplia', 'Grande').
 personal('Express', 'Poca', 'Pequeño').
+personal('Express', 'Moderada', 'Mediano').
+personal('Express', 'Amplia', 'Grande').
+personal('Laravel', 'Poca', 'Pequeño').
 personal('Laravel', 'Moderada', 'Mediano').
 personal('Laravel', 'Amplia', 'Grande').
-personal('ASP.NET', 'Amplia', 'Grande').
+personal('ASP.NET', 'Poca', 'Pequeño').
 personal('ASP.NET', 'Moderada', 'Mediano').
+personal('ASP.NET', 'Amplia', 'Grande').
 personal('Flutter', 'Poca', 'Pequeño').
-personal('Flutter', 'Moderada', 'Pequeño').
-personal('React Native', 'Moderada', 'Mediano').
+personal('Flutter', 'Moderada', 'Mediano').
+personal('Flutter', 'Amplia', 'Grande').
 personal('React Native', 'Poca', 'Pequeño').
-personal('SwiftUI', 'Amplia', 'Mediano').
+personal('React Native', 'Moderada', 'Mediano').
+personal('React Native', 'Amplia', 'Grande').
+personal('SwiftUI', 'Poca', 'Pequeño').
 personal('SwiftUI', 'Moderada', 'Mediano').
+personal('SwiftUI', 'Amplia', 'Grande').
+personal('Kotlin Multiplatform', 'Poca', 'Pequeño').
+personal('Kotlin Multiplatform', 'Moderada', 'Mediano').
 personal('Kotlin Multiplatform', 'Amplia', 'Grande').
 personal('Electron', 'Poca', 'Pequeño').
-personal('Electron', 'Moderada', 'Pequeño').
-personal('Qt', 'Amplia', 'Mediano').
+personal('Electron', 'Moderada', 'Mediano').
+personal('Electron', 'Amplia', 'Grande').
+personal('Qt', 'Poca', 'Pequeño').
 personal('Qt', 'Moderada', 'Mediano').
+personal('Qt', 'Amplia', 'Grande').
 personal('Tkinter', 'Poca', 'Pequeño').
-personal('Tkinter', 'Moderada', 'Pequeño').
-personal('Next.js', 'Moderada', 'Mediano').
+personal('Tkinter', 'Moderada', 'Mediano').
+personal('Tkinter', 'Amplia', 'Grande').
 personal('Next.js', 'Poca', 'Pequeño').
+personal('Next.js', 'Moderada', 'Mediano').
+personal('Next.js', 'Amplia', 'Grande').
+personal('Nuxt.js', 'Poca', 'Pequeño').
 personal('Nuxt.js', 'Moderada', 'Mediano').
-personal('Ruby on Rails', 'Amplia', 'Grande').
+personal('Nuxt.js', 'Amplia', 'Grande').
+personal('Ruby on Rails', 'Poca', 'Pequeño').
 personal('Ruby on Rails', 'Moderada', 'Mediano').
+personal('Ruby on Rails', 'Amplia', 'Grande').
+personal('Meteor', 'Poca', 'Pequeño').
 personal('Meteor', 'Moderada', 'Mediano').
+personal('Meteor', 'Amplia', 'Grande').
 personal('Svelte', 'Poca', 'Pequeño').
-personal('Svelte', 'Moderada', 'Pequeño').
-personal('Blazor', 'Amplia', 'Mediano').
+personal('Svelte', 'Moderada', 'Mediano').
+personal('Svelte', 'Amplia', 'Grande').
+personal('Blazor', 'Poca', 'Pequeño').
 personal('Blazor', 'Moderada', 'Mediano').
+personal('Blazor', 'Amplia', 'Grande').
+personal('Backbone.js', 'Poca', 'Pequeño').
+personal('Backbone.js', 'Moderada', 'Mediano').
+personal('Backbone.js', 'Amplia', 'Grande').
+personal('Ember.js', 'Poca', 'Pequeño').
+personal('Ember.js', 'Moderada', 'Mediano').
+personal('Ember.js', 'Amplia', 'Grande').
+personal('Phoenix', 'Poca', 'Pequeño').
+personal('Phoenix', 'Moderada', 'Mediano').
 personal('Phoenix', 'Amplia', 'Grande').
-personal('FastAPI', 'Moderada', 'Mediano').
 personal('FastAPI', 'Poca', 'Pequeño').
+personal('FastAPI', 'Moderada', 'Mediano').
+personal('FastAPI', 'Amplia', 'Grande').
+personal('Gatsby', 'Poca', 'Pequeño').
+personal('Gatsby', 'Moderada', 'Mediano').
+personal('Gatsby', 'Amplia', 'Grande').
+personal('Gridsome', 'Poca', 'Pequeño').
+personal('Gridsome', 'Moderada', 'Mediano').
+personal('Gridsome', 'Amplia', 'Grande').
+personal('Capacitor', 'Poca', 'Pequeño').
+personal('Capacitor', 'Moderada', 'Mediano').
+personal('Capacitor', 'Amplia', 'Grande').
+personal('Ionic', 'Poca', 'Pequeño').
+personal('Ionic', 'Moderada', 'Mediano').
+personal('Ionic', 'Amplia', 'Grande').
+personal('Xamarin', 'Poca', 'Pequeño').
+personal('Xamarin', 'Moderada', 'Mediano').
+personal('Xamarin', 'Amplia', 'Grande').
+personal('PyQt', 'Poca', 'Pequeño').
+personal('PyQt', 'Moderada', 'Mediano').
+personal('PyQt', 'Amplia', 'Grande').
+personal('GTK', 'Poca', 'Pequeño').
+personal('GTK', 'Moderada', 'Mediano').
+personal('GTK', 'Amplia', 'Grande').
+personal('Unity', 'Poca', 'Pequeño').
 personal('Unity', 'Moderada', 'Mediano').
 personal('Unity', 'Amplia', 'Grande').
+personal('Unreal Engine', 'Poca', 'Pequeño').
+personal('Unreal Engine', 'Moderada', 'Mediano').
 personal('Unreal Engine', 'Amplia', 'Grande').
-personal('Godot', 'Moderada', 'Pequeño').
 personal('Godot', 'Poca', 'Pequeño').
+personal('Godot', 'Moderada', 'Mediano').
+personal('Godot', 'Amplia', 'Grande').
+personal('Pandas', 'Poca', 'Pequeño').
+personal('Pandas', 'Moderada', 'Mediano').
+personal('Pandas', 'Amplia', 'Grande').
+personal('NumPy', 'Poca', 'Pequeño').
+personal('NumPy', 'Moderada', 'Mediano').
+personal('NumPy', 'Amplia', 'Grande').
+personal('TensorFlow', 'Poca', 'Pequeño').
+personal('TensorFlow', 'Moderada', 'Mediano').
 personal('TensorFlow', 'Amplia', 'Grande').
-personal('TensorFlow', 'Moderada', 'Grande').
+personal('PyTorch', 'Poca', 'Pequeño').
+personal('PyTorch', 'Moderada', 'Mediano').
 personal('PyTorch', 'Amplia', 'Grande').
-personal('PyTorch', 'Moderada', 'Grande').
+personal('Hadoop', 'Poca', 'Pequeño').
+personal('Hadoop', 'Moderada', 'Mediano').
+personal('Hadoop', 'Amplia', 'Grande').
+personal('Spark', 'Poca', 'Pequeño').
+personal('Spark', 'Moderada', 'Mediano').
+personal('Spark', 'Amplia', 'Grande').
+personal('Keras', 'Poca', 'Pequeño').
+personal('Keras', 'Moderada', 'Mediano').
+personal('Keras', 'Amplia', 'Grande').
+personal('OpenCV', 'Poca', 'Pequeño').
+personal('OpenCV', 'Moderada', 'Mediano').
+personal('OpenCV', 'Amplia', 'Grande').
+personal('Three.js', 'Poca', 'Pequeño').
+personal('Three.js', 'Moderada', 'Mediano').
+personal('Three.js', 'Amplia', 'Grande').
+personal('Babylon.js', 'Poca', 'Pequeño').
+personal('Babylon.js', 'Moderada', 'Mediano').
+personal('Babylon.js', 'Amplia', 'Grande').
+personal('WebGL', 'Poca', 'Pequeño').
+personal('WebGL', 'Moderada', 'Mediano').
+personal('WebGL', 'Amplia', 'Grande').
+personal('Cesium', 'Poca', 'Pequeño').
+personal('Cesium', 'Moderada', 'Mediano').
+personal('Cesium', 'Amplia', 'Grande').
+personal('Leaflet', 'Poca', 'Pequeño').
+personal('Leaflet', 'Moderada', 'Mediano').
+personal('Leaflet', 'Amplia', 'Grande').
+personal('Mapbox', 'Poca', 'Pequeño').
+personal('Mapbox', 'Moderada', 'Mediano').
+personal('Mapbox', 'Amplia', 'Grande').
+personal('Plotly', 'Poca', 'Pequeño').
+personal('Plotly', 'Moderada', 'Mediano').
+personal('Plotly', 'Amplia', 'Grande').
+personal('Chart.js', 'Poca', 'Pequeño').
+personal('Chart.js', 'Moderada', 'Mediano').
+personal('Chart.js', 'Amplia', 'Grande').
 
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
