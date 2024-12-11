@@ -114,12 +114,12 @@ framework(Tipo, Enfoque, Experiencia, Tam_Equipo, Presupuesto, Plazo, Lenguaje, 
     ; mostrar_error('Error: No se encontro un tipo o enfoque valido.'),
       fail
     ),
-    % Verificar contexto
-    ( verificar_contexto(N, Plazo, Presupuesto) ->
-        true
-    ; mostrar_error('Error: No se encontro coincidencia en el plazo o presupuesto.'),
-        fail
-        ),
+    % % Verificar contexto
+    % ( verificar_contexto(N, Plazo, Presupuesto) ->
+    %     true
+    % ; mostrar_error('Error: No se encontro coincidencia en el plazo o presupuesto.'),
+    %     fail
+    %     ),
     % Verificar personal
     ( verificar_personal(N, Experiencia, Tam_Equipo) ->
         true
@@ -377,7 +377,7 @@ personal('TensorFlow', 'Amplia', 'Grande').
 personal('PyTorch', 'Poca', 'Pequeno').
 personal('PyTorch', 'Moderada', 'Mediano').
 personal('PyTorch', 'Amplia', 'Grande').
-<<<<<<< HEAD
+
 personal('PyTorch', 'Moderada', 'Grande').
 personal('Backbone.js', 'Poca', 'Pequeno').
 personal('Backbone.js', 'Moderada', 'Mediano').
@@ -441,7 +441,7 @@ personal('Plotly', 'Amplia', 'Grande').
 personal('Chart.js', 'Poca', 'Pequeno').
 personal('Chart.js', 'Moderada', 'Mediano').
 personal('Chart.js', 'Amplia', 'Grande').
->>>>>>> 9b9d9535b543b95e060f45c4b69e3c763c9d989f
+
 
 
 % contexto(framework, plazo_de_tiempo, presupuesto)
@@ -659,32 +659,56 @@ lenguaje('D3.js','TypeScript').
 
 %justificacion(framework,justificacion)
 :-dynamic justificacion/2.
-justificacion('React','React es una biblioteca de JavaScript rapida y flexible que permite construir interfaces de usuario reutilizables con un alto rendimiento gracias a su Virtual DOM.').
+justificacion('React','React es una biblioteca de JavaScript rápida y flexible que permite construir interfaces de usuario reutilizables con un alto rendimiento gracias a su Virtual DOM.').
 justificacion('Angular','Angular es un framework completo que permite desarrollar aplicaciones web robustas con TypeScript, ideal para proyectos empresariales con arquitecturas complejas.').
-justificacion('Vue','Vue es un framework progresivo que combina facilidad de aprendizaje con un enfoque modular, ideal para proyectos pequenos y medianos.').
-justificacion('Django','Django es un framework web de alto nivel para Python que promueve el desarrollo rapido y limpio, con seguridad y escalabilidad integradas.').
-justificacion('Flask','Flask es un microframework ligero y flexible para Python, ideal para proyectos pequenos o MVPs debido a su simplicidad.').
+justificacion('Vue','Vue es un framework progresivo que combina facilidad de aprendizaje con un enfoque modular, ideal para proyectos pequeños y medianos.').
+justificacion('Django','Django es un framework web de alto nivel para Python que promueve el desarrollo rápido y limpio, con seguridad y escalabilidad integradas.').
+justificacion('Flask','Flask es un microframework ligero y flexible para Python, ideal para proyectos pequeños o MVPs debido a su simplicidad.').
 justificacion('Spring','Spring Framework es una poderosa herramienta de desarrollo backend para Java, ofreciendo un ecosistema robusto y extensible para aplicaciones empresariales.').
-justificacion('Express','Express es un framework minimalista para Node.js que facilita el desarrollo rapido de aplicaciones web y APIs.').
-justificacion('Laravel','Laravel es un framework PHP elegante y expresivo que simplifica tareas comunes como el manejo de bases de datos y autenticacion.').
-justificacion('ASP.NET','ASP.NET es un framework versatil de Microsoft que permite construir aplicaciones web y APIs altamente escalables en C#.').
-justificacion('Flutter','Flutter permite desarrollar aplicaciones moviles con una sola base de codigo en Dart, ofreciendo una experiencia nativa en multiples plataformas.').
-justificacion('React Native','React Native permite crear aplicaciones moviles multiplataforma utilizando JavaScript, con componentes reutilizables y rendimiento casi nativo.').
-justificacion('SwiftUI','SwiftUI es el framework moderno de Apple para construir interfaces de usuario declarativas en iOS, macOS y mas.').
-justificacion('Kotlin Multiplatform','Kotlin Multiplatform facilita el desarrollo de aplicaciones moviles compartiendo logica de negocio entre plataformas, mientras usa codigo nativo para interfaces.').
-justificacion('Electron','Electron permite crear aplicaciones de escritorio multiplataforma utilizando tecnologias web como HTML, CSS y JavaScript.').
-justificacion('Qt','Qt es un framework potente para C++ que soporta el desarrollo de aplicaciones de escritorio multiplataforma con interfaces graficas avanzadas.').
-justificacion('Tkinter','Tkinter es la biblioteca estandar para interfaces graficas en Python, ideal para prototipos o aplicaciones simples.').
-justificacion('Next.js','Next.js es un framework React que simplifica el desarrollo de aplicaciones web server-side rendering (SSR) y estaticas.').
-justificacion('Nuxt.js','Nuxt.js es un framework basado en Vue para aplicaciones server-side rendering (SSR) o estaticas, optimizado para SEO y rendimiento.').
-justificacion('Ruby on Rails','Ruby on Rails es un framework fullstack que sigue el principio de convencion sobre configuracion, acelerando el desarrollo de aplicaciones web.').
-justificacion('Meteor','Meteor es un framework fullstack para JavaScript que permite crear aplicaciones web y moviles con integracion en tiempo real.').
-justificacion('Svelte','Svelte es un framework innovador que convierte componentes en codigo optimizado, eliminando la necesidad de un Virtual DOM.').
+justificacion('Express','Express es un framework minimalista para Node.js que facilita el desarrollo rápido de aplicaciones web y APIs.').
+justificacion('Laravel','Laravel es un framework PHP elegante y expresivo que simplifica tareas comunes como el manejo de bases de datos y autenticación.').
+justificacion('ASP.NET','ASP.NET es un framework versátil de Microsoft que permite construir aplicaciones web y APIs altamente escalables en C#.').
+justificacion('Flutter','Flutter permite desarrollar aplicaciones móviles con una sola base de código en Dart, ofreciendo una experiencia nativa en múltiples plataformas.').
+justificacion('React Native','React Native permite crear aplicaciones móviles multiplataforma utilizando JavaScript, con componentes reutilizables y rendimiento casi nativo.').
+justificacion('SwiftUI','SwiftUI es el framework moderno de Apple para construir interfaces de usuario declarativas en iOS, macOS y más.').
+justificacion('Kotlin Multiplatform','Kotlin Multiplatform facilita el desarrollo de aplicaciones móviles compartiendo lógica de negocio entre plataformas, mientras usa código nativo para interfaces.').
+justificacion('Electron','Electron permite crear aplicaciones de escritorio multiplataforma utilizando tecnologías web como HTML, CSS y JavaScript.').
+justificacion('Qt','Qt es un framework potente para C++ que soporta el desarrollo de aplicaciones de escritorio multiplataforma con interfaces gráficas avanzadas.').
+justificacion('Tkinter','Tkinter es la biblioteca estándar para interfaces gráficas en Python, ideal para prototipos o aplicaciones simples.').
+justificacion('Next.js','Next.js es un framework React que simplifica el desarrollo de aplicaciones web server-side rendering (SSR) y estáticas.').
+justificacion('Nuxt.js','Nuxt.js es un framework basado en Vue para aplicaciones server-side rendering (SSR) o estáticas, optimizado para SEO y rendimiento.').
+justificacion('Ruby on Rails','Ruby on Rails es un framework fullstack que sigue el principio de convención sobre configuración, acelerando el desarrollo de aplicaciones web.').
+justificacion('Meteor','Meteor es un framework fullstack para JavaScript que permite crear aplicaciones web y móviles con integración en tiempo real.').
+justificacion('Svelte','Svelte es un framework innovador que convierte componentes en código optimizado, eliminando la necesidad de un Virtual DOM.').
 justificacion('Blazor','Blazor es un framework de Microsoft para crear aplicaciones web interactivas utilizando C# y .NET en lugar de JavaScript.').
+justificacion('Backbone.js','Backbone.js es un framework ligero que organiza aplicaciones web con un modelo MVC simple y flexible.').
+justificacion('Ember.js','Ember.js es un framework robusto con un enfoque en convenciones y productividad para desarrollar aplicaciones escalables.').
 justificacion('Phoenix','Phoenix es un framework Elixir que aprovecha el modelo de concurrencia de Erlang para crear aplicaciones web escalables y en tiempo real.').
-justificacion('FastAPI','FastAPI es un framework para Python disenado para construir APIs modernas, rapidas y con validacion automatica de datos.').
+justificacion('FastAPI','FastAPI es un framework para Python diseñado para construir APIs modernas, rápidas y con validación automática de datos.').
+justificacion('Gatsby','Gatsby es un framework moderno basado en React que facilita el desarrollo de sitios estáticos rápidos y optimizados.').
+justificacion('Gridsome','Gridsome es un framework basado en Vue que facilita el desarrollo de sitios estáticos optimizados para SEO y rendimiento.').
+justificacion('Capacitor','Capacitor permite construir aplicaciones móviles híbridas modernas utilizando tecnologías web, con acceso a APIs nativas.').
+justificacion('Ionic','Ionic facilita el desarrollo de aplicaciones móviles híbridas con tecnologías web y componentes UI predefinidos.').
+justificacion('Xamarin','Xamarin permite desarrollar aplicaciones móviles nativas utilizando C# y .NET, compartiendo código entre plataformas.').
+justificacion('PyQt','PyQt es un framework que permite desarrollar aplicaciones de escritorio potentes con Python y Qt.').
+justificacion('GTK','GTK es un framework multiplataforma para crear interfaces gráficas en aplicaciones de escritorio, popular en sistemas Linux.').
 justificacion('Unity','Unity es un motor de desarrollo de videojuegos con capacidades frontend para crear experiencias interactivas en 2D y 3D.').
-justificacion('Unreal Engine','Unreal Engine es un potente motor grafico utilizado para juegos y simulaciones, con herramientas avanzadas para renderizado.').
+justificacion('Unreal Engine','Unreal Engine es un potente motor gráfico utilizado para juegos y simulaciones, con herramientas avanzadas para renderizado.').
 justificacion('Godot','Godot es un motor de videojuegos accesible y ligero que permite desarrollar experiencias en 2D y 3D con flexibilidad.').
-justificacion('TensorFlow','TensorFlow es un framework de aprendizaje automatico robusto, ideal para modelos complejos y despliegue escalable.').
-justificacion('PyTorch','PyTorch es un framework flexible y dinamico para aprendizaje automatico, ampliamente utilizado en investigacion y desarrollo.').
+justificacion('Pandas','Pandas es una biblioteca de Python para análisis de datos, proporcionando estructuras eficientes para manipular datos tabulares.').
+justificacion('NumPy','NumPy es la biblioteca base para cálculos numéricos en Python, ofreciendo soporte para arreglos multidimensionales y operaciones matemáticas.').
+justificacion('TensorFlow','TensorFlow es un framework de aprendizaje automático robusto, ideal para modelos complejos y despliegue escalable.').
+justificacion('PyTorch','PyTorch es un framework flexible y dinámico para aprendizaje automático, ampliamente utilizado en investigación y desarrollo.').
+justificacion('Hadoop','Hadoop es un framework de almacenamiento y procesamiento distribuido de grandes volúmenes de datos a través de clústeres.').
+justificacion('Spark','Spark es un framework rápido y general para el procesamiento de grandes datos en paralelo, con soporte para análisis en tiempo real.').
+justificacion('Keras','Keras es una API de alto nivel para redes neuronales en Python, fácil de usar y compatible con TensorFlow.').
+justificacion('OpenCV','OpenCV es una biblioteca de visión por computadora que proporciona herramientas para procesar imágenes y videos de manera eficiente.').
+justificacion('Three.js','Three.js facilita la creación de gráficos 3D interactivos en la web utilizando WebGL.').
+justificacion('Babylon.js','Babylon.js es un motor de gráficos 3D basado en WebGL, ideal para experiencias interactivas en la web.').
+justificacion('WebGL','WebGL es una API de JavaScript para renderizado de gráficos 3D y 2D acelerados en navegadores.').
+justificacion('Cesium','Cesium es una biblioteca para visualización 3D de mapas geoespaciales y terrenos en tiempo real.').
+justificacion('Leaflet','Leaflet es una biblioteca ligera para crear mapas interactivos en aplicaciones web.').
+justificacion('Mapbox','Mapbox proporciona herramientas avanzadas para mapas interactivos personalizados y visualización de datos geoespaciales.').
+justificacion('Plotly','Plotly es una biblioteca que permite crear gráficos interactivos y visualizaciones de datos en aplicaciones web.').
+justificacion('Chart.js','Chart.js es una biblioteca simple y flexible para crear gráficos interactivos en aplicaciones web.').
+justificacion('D3.js','D3.js es una biblioteca poderosa para manipular datos y crear visualizaciones dinámicas y personalizables en la web.').
