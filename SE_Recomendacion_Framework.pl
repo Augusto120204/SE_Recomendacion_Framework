@@ -18,8 +18,8 @@ resource(login,image,image('inicio.bmp')).
    send(Figure, display, Bitmap),
    send(Figure, status, 1),
    send(VentanaE, display, Figure, point(25, 40)),
-   send(VentanaE, display, Usuario, point(30, 430)),
-   send(VentanaE, display, Salir, point(400, 430)),
+   send(VentanaE, display, Usuario, point(400, 430)),
+   send(VentanaE, display, Salir, point(800, 430)),
    send(VentanaE, open).
 
 
