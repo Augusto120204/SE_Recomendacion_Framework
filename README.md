@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://www.swi-prolog.org/" target="blank"><img src="images/Prolog-logo-512.png" width="200" alt="Nest Logo" /></a>
 </p>
+
 ## Descripción
 Proyecto en Prolog, diseñado para asistir a desarrolladores en la selección del framework más adecuado según sus necesidades específicas. Este sistema utiliza una base de conocimiento con reglas y hechos que evalúan criterios como el tipo de proyecto, el lenguaje de programación preferido y el nivel de experiencia del equipo.
 ## Instalaciones Necesarias

@@ -141,38 +141,38 @@ framework(Tipo, Enfoque, Experiencia, Tam_Equipo, Presupuesto, Plazo, Lenguaje, 
     ),
 
     % Si queda un unico resultado, mostrarlo, o seleccionar uno al azar si hay multiples
-    % ( ListaLenguaje = [Resultado] ->
-    %     mostrar_resultado(Nombre, Resultado)
-    % ; ListaLenguaje \= [] ->
-    %     random_member(ResultadoAleatorio, ListaLenguaje),
-    %     mostrar_resultado(Nombre, ResultadoAleatorio)
-    % ; mostrar_error('Error: Hay multiples resultados o ninguno despues de filtrar.'),
-    %   fail
-    % ).
-
-%------------------------------------------------------
-    %Mostrar toda la lista
     ( ListaLenguaje = [Resultado] ->
         mostrar_resultado(Nombre, Resultado)
     ; ListaLenguaje \= [] ->
-        mostrar_todos_resultados(Nombre, ListaLenguaje)
-    ; mostrar_error('Error: No se encontraron resultados después de filtrar.'),
+        random_member(ResultadoAleatorio, ListaLenguaje),
+        mostrar_resultado(Nombre, ResultadoAleatorio)
+    ; mostrar_error('Error: Hay multiples resultados o ninguno despues de filtrar.'),
       fail
     ).
 
-    % Mostrar todos los resultados de una lista
-    mostrar_todos_resultados(Nombre, Lista) :-
-        new(VentanaU, dialog('Sugerencias de Frameworks')),
-        send(VentanaU, append, label(title, 'Frameworks sugeridos:', font('times', 'roman', 17))),
-        mostrar_lista(Lista, VentanaU),
-        send(VentanaU, open).
-
-    % Iterar sobre la lista y mostrar cada elemento
-    mostrar_lista([], _). % Caso base: lista vacía, no hacer nada.
-    mostrar_lista([H|T], Ventana) :-
-        format(atom(Mensaje), 'Framework: ~w', [H]),
-        send(Ventana, append, label(framework, Mensaje, font('times', 'roman', 14))),
-        mostrar_lista(T, Ventana).
+%------------------------------------------------------
+    %%Mostrar toda la lista
+    %( ListaLenguaje = [Resultado] ->
+    %    mostrar_resultado(Nombre, Resultado)
+    %; ListaLenguaje \= [] ->
+    %    mostrar_todos_resultados(Nombre, ListaLenguaje)
+    %; mostrar_error('Error: No se encontraron resultados después de filtrar.'),
+    %  fail
+    %).
+%
+    %% Mostrar todos los resultados de una lista
+    %mostrar_todos_resultados(Nombre, Lista) :-
+    %    new(VentanaU, dialog('Sugerencias de Frameworks')),
+    %    send(VentanaU, append, label(title, 'Frameworks sugeridos:', font('times', 'roman', 17))),
+    %    mostrar_lista(Lista, VentanaU),
+    %    send(VentanaU, open).
+%
+    %% Iterar sobre la lista y mostrar cada elemento
+    %mostrar_lista([], _). % Caso base: lista vacía, no hacer nada.
+    %mostrar_lista([H|T], Ventana) :-
+    %    format(atom(Mensaje), 'Framework: ~w', [H]),
+    %    send(Ventana, append, label(framework, Mensaje, font('times', 'roman', 14))),
+    %    mostrar_lista(T, Ventana).
 %------------------------------------------------------------
 
 % Predicados de filtrado
